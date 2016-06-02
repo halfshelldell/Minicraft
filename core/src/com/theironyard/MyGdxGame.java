@@ -26,7 +26,6 @@ public class MyGdxGame extends ApplicationAdapter {
 	static final int WIDTH = 16;
 	static final int HEIGHT = 16;
 	static final float MAX_VELOCITY = 100;
-	static final float ACCELERATION = 2.00f;
 	static final float DECELERATION = 0.95f;
 
 	@Override
