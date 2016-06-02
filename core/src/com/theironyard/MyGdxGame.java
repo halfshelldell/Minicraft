@@ -19,8 +19,6 @@ public class MyGdxGame extends ApplicationAdapter {
 	TextureRegion left;
 	float time;
 
-
-
 	static final int WIDTH = 16;
 	static final int HEIGHT = 16;
 	static final float MAX_VELOCITY = 100;
@@ -74,7 +72,6 @@ public class MyGdxGame extends ApplicationAdapter {
 		if (Gdx.input.isKeyPressed(Input.Keys.SPACE)) {
 			adjustment = 100;
 		}
-
 		if (Gdx.input.isKeyPressed(Input.Keys.UP)) {
 			yv = MAX_VELOCITY + adjustment;
 		}
@@ -107,10 +104,6 @@ public class MyGdxGame extends ApplicationAdapter {
 
 		yv = decelerate(yv);
 		xv = decelerate(xv);
-
-
-
-
 	}
 
 	public float decelerate(float velocity) {
