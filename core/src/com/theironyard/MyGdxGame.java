@@ -5,10 +5,8 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
 
 
 public class MyGdxGame extends ApplicationAdapter {
@@ -64,7 +62,7 @@ public class MyGdxGame extends ApplicationAdapter {
 			img = down;
 		}
 
-		Gdx.gl.glClearColor(1, 0, 0, 1);
+		Gdx.gl.glClearColor(60/255.0f, 181/255.0f, 0, 0);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		batch.begin();
 		batch.draw(img, x, y, WIDTH * 3, HEIGHT * 3);
@@ -90,12 +88,27 @@ public class MyGdxGame extends ApplicationAdapter {
 			xv = -MAX_VELOCITY - adjustment;
 		}
 
+		if (x > Gdx.graphics.getWidth()) {
+			x = 0;
+		}
+		if (x < 0) {
+			x = Gdx.graphics.getWidth();
+		}
+		if (y > Gdx.graphics.getHeight()) {
+			y = 0;
+		}
+		if (y < 0) {
+			y = Gdx.graphics.getHeight();
+		}
+
 		float delta = Gdx.graphics.getDeltaTime();
 		y += yv * delta;
 		x += xv * delta;
 
 		yv = decelerate(yv);
 		xv = decelerate(xv);
+
+
 
 
 	}
